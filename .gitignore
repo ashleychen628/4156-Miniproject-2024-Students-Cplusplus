@@ -1,6 +1,9 @@
 IndividualMiniprojectC++/.vscode/
-IndividualMiniprojectC++/external_libraries/boost_1_85_0
-IndividualMiniprojectC++/external_libraries/Crow-1.2.0-Darwin
+IndividualMiniprojectC++/external_libraries/boost
+IndividualMiniprojectC++/external_libraries/crow
 IndividualMiniprojectC++/build/*
 !IndividualMiniprojectC++/build/README.txt
 !IndividualMiniprojectC++/external_libraries/README.txt
+IndividualMiniprojectC++/external_libraries/.DS_Store
+IndividualMiniprojectC++/.DS_Store
+.DS_Store
