@@ -1,12 +1,15 @@
+// Copyright 2024 Danyao Chen
 #include "MyApp.h"
 #include <iostream>
 
-MyFileDatabase* MyApp::myFileDatabase = nullptr;
+MyFileDatabase *MyApp::myFileDatabase = nullptr;
 bool MyApp::saveData = false;
 
-void MyApp::run(const std::string& mode) {
+void MyApp::run(const std::string &mode)
+{
     saveData = true;
-    if (mode == "setup") {
+    if (mode == "setup")
+    {
         setupDatabase();
         std::cout << "System Setup" << std::endl;
         return;
@@ -15,31 +18,37 @@ void MyApp::run(const std::string& mode) {
     std::cout << "Start up" << std::endl;
 }
 
-void MyApp::onTermination() {
+void MyApp::onTermination()
+{
     std::cout << "Termination" << std::endl;
-    if (saveData && myFileDatabase) {
+    if (saveData && myFileDatabase)
+    {
         myFileDatabase->saveContentsToFile();
     }
     delete myFileDatabase;
     myFileDatabase = nullptr;
 }
 
-void MyApp::overrideDatabase(MyFileDatabase* testData) {
+void MyApp::overrideDatabase(MyFileDatabase *testData)
+{
     delete myFileDatabase;
     myFileDatabase = testData;
     saveData = false;
 }
 
-MyFileDatabase *MyApp::getDatabase() {
+MyFileDatabase *MyApp::getDatabase()
+{
     return myFileDatabase;
 }
 
-void MyApp::setupDatabase() {
+void MyApp::setupDatabase()
+{
     myFileDatabase = new MyFileDatabase(1, "testfile.bin");
     resetDataFile();
 }
 
-void MyApp::resetDataFile() {
+void MyApp::resetDataFile()
+{
     std::string times[] = {"11:40-12:55", "4:10-5:25", "10:10-11:25", "2:40-3:55"};
     std::string locations[] = {"417 IAB", "309 HAV", "301 URIS"};
 
